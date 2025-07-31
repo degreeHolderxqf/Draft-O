@@ -1,0 +1,27 @@
+mutation {
+  draftOrderCalculate(
+    input: {lineItems: [{variantId: "gid://shopify/ProductVariant/50250343711027", quantity: 1}], shippingAddress: {address1: "dewas", city: "dewas", country: "India", province: "IN", zip: "455001"}}
+  ) {
+    calculatedDraftOrder {
+      totalPrice
+      subtotalPrice
+      totalTax
+      shippingLine {
+        carrierIdentifier
+        code
+        price
+      }
+      totalShippingPrice
+      totalShippingPriceSet {
+        shopMoney {
+          amount
+          currencyCode
+        }
+        presentmentMoney {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+}
