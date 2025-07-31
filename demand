@@ -1,0 +1,12 @@
+mutation {
+  draftOrderCalculate(
+    input: {lineItems: [{variantId: "gid://shopify/ProductVariant/50250343711027", quantity: 1}]}
+  ) {
+    calculatedDraftOrder {
+      totalPrice
+      subtotalPrice
+      totalTax
+      
+    }
+  }
+}
