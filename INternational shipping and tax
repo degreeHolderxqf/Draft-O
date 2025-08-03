@@ -1,0 +1,30 @@
+mutation {
+  draftOrderCalculate(
+    input: {
+      lineItems: [{ variantId: "gid://shopify/ProductVariant/50250343711027", quantity: 1 }],
+      shippingAddress: {
+        address1: "123 Main St",
+        city: "Los Angeles",
+        country: "United States",
+        countryCode: US,
+        province: "California",
+        provinceCode: "CA",
+        zip: "90001"
+      }
+    }
+  ) {
+    calculatedDraftOrder {
+      totalPrice
+      subtotalPrice
+      totalTax
+      availableShippingRates {
+        handle
+        title
+        price {
+          currencyCode
+          amount
+        }
+      }
+    }
+  }
+}
